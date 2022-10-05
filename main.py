@@ -50,7 +50,7 @@ def permutations(str):
             str[q] = temp
 s = "abc"
 s = list(s)
-permutations(s)
+#permutations(s)
 
 #recursive
 def permute(string, pocket=""):
@@ -63,4 +63,41 @@ def permute(string, pocket=""):
             back = string[i+1:]
             together = front + back
             permute(together, letter + pocket)
-#print(permute("ABCDEF", ""))
+#print(permute("ABC", ""))
+
+
+'''
+SEARCH AND SORT
+'''
+
+#linear search
+
+def l_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+
+arr = [45, 82, 19, 68, 26, 29]
+target = 19
+
+#print(l_search(arr, target) + 1)
+
+
+#binary search
+
+def b_search(arr, start, end, target):
+    while start <= end:
+        mid = (start + end) // 2
+        if arr[mid] < target:
+            start = mid + 1
+        elif arr[mid] > target:
+            end = mid - 1
+        else:
+            return mid
+    return start
+
+arr = [3, 7, 15, 18, 23, 27, 35, 39, 56, 67, 74, 83, 91]
+target = 15
+
+print(b_search(arr,0, len(arr) - 1, target))
+
