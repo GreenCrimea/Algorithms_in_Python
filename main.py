@@ -70,6 +70,7 @@ def permute(string, pocket=""):
 SEARCH AND SORT
 '''
 
+
 #linear search
 
 def l_search(arr, target):
@@ -118,3 +119,31 @@ def b_search_recur(arr, start, end, target):
 #print(b_search_recur(arr, 0, len(arr) - 1, target) + 1)
 
 
+#bubble sort
+
+def bubble_sort(arr):
+    iterations = 0
+    for i in range(len(arr)):
+        for j in range(len(arr) - i - 1):
+            iterations += 1
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr, iterations
+
+arr = [67, 46, 86, 32, 57, 21, 46, 35, 56, 98, 31, 58, 42]
+#print(bubble_sort(arr))
+
+
+#insertion sort
+
+def insertion_sort(arr):
+    for j in range(1, len(arr)):
+        key = arr[j]
+        i = j - 1
+        while i >= 0 and arr[i] > key:
+            arr[i + 1] = arr[i]
+            i -= 1
+        arr[i + 1] = key
+    return arr
+
+#print(insertion_sort(arr))
