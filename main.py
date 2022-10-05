@@ -85,6 +85,7 @@ target = 19
 
 #binary search
 
+#iterative
 def b_search(arr, start, end, target):
     while start <= end:
         mid = (start + end) // 2
@@ -94,10 +95,24 @@ def b_search(arr, start, end, target):
             end = mid - 1
         else:
             return mid
-    return start
+    return -1
 
 arr = [3, 7, 15, 18, 23, 27, 35, 39, 56, 67, 74, 83, 91]
-target = 15
+target = 83
 
-print(b_search(arr,0, len(arr) - 1, target))
+#print(b_search(arr, 0, len(arr) - 1, target) + 1)
 
+#recursive
+def b_search_recur(arr, start, end, target):
+    if end >= start:
+        mid = start + end - 1 // 2
+        if arr[mid] < target:
+            b_search_recur(arr, mid + 1, end, target)
+        elif arr[mid] > target:
+            return b_search_recur(arr, start, mid - 1, target)
+        else:
+            return mid
+    else:
+        return -1
+
+print(b_search_recur(arr, 0, len(arr) - 1, target) + 1)
