@@ -105,9 +105,9 @@ target = 83
 #recursive
 def b_search_recur(arr, start, end, target):
     if end >= start:
-        mid = start + end - 1 // 2
+        mid = (start + end - 1) // 2
         if arr[mid] < target:
-            b_search_recur(arr, mid + 1, end, target)
+            return b_search_recur(arr, mid + 1, end, target)
         elif arr[mid] > target:
             return b_search_recur(arr, start, mid - 1, target)
         else:
@@ -115,4 +115,6 @@ def b_search_recur(arr, start, end, target):
     else:
         return -1
 
-print(b_search_recur(arr, 0, len(arr) - 1, target) + 1)
+#print(b_search_recur(arr, 0, len(arr) - 1, target) + 1)
+
+
