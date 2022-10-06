@@ -210,3 +210,32 @@ divide and conquer
 
 #merge sort
 
+class Solution(object):
+    
+    def sort_array(self, arr):
+        mid = len(arr) // 2
+        left = sorted(arr[:mid])
+        right = sorted(arr[mid:])
+        c = []
+        while min(len(left), len(right)) > 0:
+            if left[0] > right[0]:
+                insert = right.pop(0)
+                c.append(insert)
+            elif left[0] <= right[0]:
+                insert = left.pop(0)
+                c.append(insert)
+        if len(left) > 0:
+            for i in left:
+                c.append(i)
+        if len(right) > 0:
+            for i in right:
+                c.append(i)
+        return c
+
+solution = Solution()
+arr = [13, 43, 45, 35, 46, 35, 46, 44, 52, 35, 55, 44, 56, 72, 52, 34, 56 , 37, 46, 24, 76, 47]
+#print(solution.sort_array(arr))
+
+
+#matrix multiplication
+
