@@ -287,3 +287,6 @@ def strassen_iter(x, y):
 #print(strassen_iter(x, y))
 
 
+'''
+greedy algorithms
+'''
