@@ -1,5 +1,6 @@
 from math import factorial
 
+
 '''
 RECURSIVE ALGORITHMS
 '''
@@ -69,7 +70,6 @@ def permute(string, pocket=""):
 '''
 SEARCH AND SORT
 '''
-
 
 #linear search
 
@@ -202,3 +202,11 @@ first_kid.next = second_kid
 family.insert_new_header("Dave")
 family.delete("Bob")
 #family.traversal()
+
+
+'''
+divide and conquer
+'''
+
+#merge sort
+
